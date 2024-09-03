@@ -8,22 +8,34 @@ import styles from "@/styles/style";
 export default function index() {
   return (
     <Surface style={styles.container}>
-      <View>
-        <Text>{"Look Like you're new to"}</Text>
-        <Logo />
-      </View>
+      <View className="h-full items-center gap-12 pt-24">
+        <View className="items-center justify-center space-y-2">
+          <Text className="text-2xl font-semibold">
+            {"Look Like you're new to"}
+          </Text>
+          <Logo />
+        </View>
 
-      <View>
-        <Text>{"Let's create an account for you"}</Text>
-      </View>
+        <View className="items-center justify-center space-y-4">
+          <Text className="text-xl font-semibold">
+            {"Let's create an account for you"}
+          </Text>
+          <Button
+            onPress={() => router.navigate("/signup/create")}
+            mode="contained"
+          >
+            Proceed to create an account
+          </Button>
+        </View>
 
-      <Button onPress={() => router.navigate("/signup/create")}>Proceed to create an account</Button>
-
-      <View>
-        <Text>Already have an account?</Text>
-        <Pressable onPress={() => router.navigate("/login")}>
-          Sign in with another email or mobile
-        </Pressable>
+        <View className="absolute bottom-12 items-center justify-center">
+          <Text>Already have an account?</Text>
+          <Pressable onPress={() => router.navigate("/login")}>
+            <Text className="text-green">
+              Sign in with another email or mobile
+            </Text>
+          </Pressable>
+        </View>
       </View>
     </Surface>
   );

@@ -19,7 +19,8 @@ export default function RootLayout() {
   return (
     <PaperProvider theme={theme}>
       <Stack>
-        <Stack.Screen name="index" />
+        <Stack.Screen name="index" options={{headerShown: false}}/>
+        <Stack.Screen name="location" options={{headerShown: false}}/>
       </Stack>
     </PaperProvider>
   );
