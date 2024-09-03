@@ -31,7 +31,7 @@ export default function index() {
         <Text>Whats Your</Text>
         <Text>Location</Text>
 
-        <Button onPress={requstLocationPermission} mode="contained-tonal">
+        <Button onPress={requstLocationPermission} mode="contained">
           Allow Location Access
         </Button>
         <Button>

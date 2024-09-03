@@ -13,7 +13,7 @@ export default function index() {
         <OTPInputView
           pinCount={4}
         />
-        <Button mode="contained-tonal" onPress={() => router.navigate("/dashboard")}>Continue</Button>
+        <Button mode="contained" onPress={() => router.navigate("/dashboard")}>Continue</Button>
         <Text>Didn't receive the OTP?</Text>
       </View>
     </Surface>

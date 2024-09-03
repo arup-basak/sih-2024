@@ -16,7 +16,7 @@ export default function index() {
       </View>
       <View>
         <Text>Sign In or Create an Account</Text>
-        <TextInput label="Enter Mobile No" mode="outlined" />
+        <TextInput label="Enter Mobile No" mode="outlined" theme={{ roundness: 8 }} />
         <Button onPress={handleSignIn}>Sign In</Button>
 
         <Pressable onPress={handleSignInGoogle}>Sign In With Google</Pressable>

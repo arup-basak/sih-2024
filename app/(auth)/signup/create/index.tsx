@@ -23,26 +23,26 @@ export default function index() {
     <Surface style={styles.container}>
       <View>
         <TextInput
-          mode="outlined"
+          mode="outlined" theme={{ roundness: 8 }}
           label="Your Name"
           value={name}
           onChangeText={setName}
         />
         <TextInput
-          mode="outlined"
+          mode="outlined" theme={{ roundness: 8 }}
           label="Mobile No"
           value={mobileNo}
           onChangeText={setMobileNo}
         />
         <TextInput
-          mode="outlined"
+          mode="outlined" theme={{ roundness: 8 }}
           label="Password"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
 
-        <Button onPress={handleVerifyMobileNo} mode="contained-tonal">
+        <Button onPress={handleVerifyMobileNo} mode="contained">
           Verify Mobile No
         </Button>
       </View>
