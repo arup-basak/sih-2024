@@ -3,10 +3,11 @@ import React from "react";
 import Logo from "@/components/Logo";
 import { Surface, Button } from "react-native-paper";
 import { router } from "expo-router";
+import styles from "@/styles/style";
 
 export default function index() {
   return (
-    <Surface>
+    <Surface style={styles.container}>
       <View>
         <Text>{"Look Like you're new to"}</Text>
         <Logo />

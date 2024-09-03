@@ -2,13 +2,14 @@ import { View, Text, Pressable } from "react-native";
 import React from "react";
 import Logo from "@/components/Logo";
 import { Button, Surface, TextInput } from "react-native-paper";
+import styles from "@/styles/style";
 
 export default function index() {
   const handleSignIn = () => {};
 
   const handleSignInGoogle = () => {};
   return (
-    <Surface>
+    <Surface style={styles.container}>
       <View>
         <Text>Welcome To</Text>
         <Logo />
