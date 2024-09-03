@@ -2,6 +2,7 @@ import { View, Text, Pressable } from "react-native";
 import React, { useState } from "react";
 import { Button, Surface, TextInput } from "react-native-paper";
 import { router } from "expo-router";
+import styles from "@/styles/style";
 
 export default function index() {
   const [name, setName] = useState("");
@@ -19,7 +20,7 @@ export default function index() {
   };
 
   return (
-    <Surface>
+    <Surface style={styles.container}>
       <View>
         <TextInput
           mode="outlined"
