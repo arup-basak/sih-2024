@@ -3,11 +3,9 @@ import React, { useState } from "react";
 import { Button, Surface, TextInput } from "react-native-paper";
 import { router } from "expo-router";
 import styles from "@/styles/style";
-import { useResponsiveWidth } from "react-native-responsive-dimensions";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function index() {
-  const width = useResponsiveWidth(80);
-
   const [name, setName] = useState("");
   const [mobileNo, setMobileNo] = useState("");
   const [password, setPassword] = useState("");
@@ -23,16 +21,19 @@ export default function index() {
   };
 
   return (
-    <Surface style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View className="h-full items-center gap-12 pt-24">
-        <View className="space-y-2">
+        <View className="items-center justify-center space-y-2">
+          <Text className="text-2xl font-semibold">{"Create an account"}</Text>
+        </View>
+        <View className="gap-3">
           <TextInput
             mode="outlined"
             theme={{ roundness: 8 }}
             label="Your Name"
             value={name}
             onChangeText={setName}
-            style={{ width }}
+            style={{ width: 350 }}
           />
           <TextInput
             mode="outlined"
@@ -40,7 +41,7 @@ export default function index() {
             label="Mobile No"
             value={mobileNo}
             onChangeText={setMobileNo}
-            style={{ width }}
+            style={{ width: 350 }}
           />
           <TextInput
             mode="outlined"
@@ -48,7 +49,7 @@ export default function index() {
             label="Password"
             value={password}
             onChangeText={setPassword}
-            style={{ width }}
+            style={{ width: 350 }}
             secureTextEntry
           />
 
@@ -68,6 +69,6 @@ export default function index() {
           </Pressable>
         </View>
       </View>
-    </Surface>
+    </SafeAreaView>
   );
 }

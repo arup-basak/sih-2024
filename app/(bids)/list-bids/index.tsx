@@ -1,12 +1,12 @@
-import { View, FlatList, ScrollView } from "react-native";
+import { FlatList, ScrollView } from "react-native";
 import React from "react";
-import { Surface } from "react-native-paper";
 import ListBidCard from "@/components/cards/ListBidCard";
 import styles from "@/styles/style";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function index() {
   return (
-    <Surface style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScrollView>
         <FlatList
           data={sampleData}
@@ -14,7 +14,7 @@ export default function index() {
           keyExtractor={(item) => item.id.toString()}
         />
       </ScrollView>
-    </Surface>
+    </SafeAreaView>
   );
 }
 

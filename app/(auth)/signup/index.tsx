@@ -1,14 +1,15 @@
 import { View, Text, Pressable } from "react-native";
 import React from "react";
 import Logo from "@/components/Logo";
-import { Surface, Button } from "react-native-paper";
+import { Button } from "react-native-paper";
 import { router } from "expo-router";
 import styles from "@/styles/style";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function index() {
   return (
-    <Surface style={styles.container}>
-      <View className="h-full items-center gap-12 pt-24">
+    <SafeAreaView style={styles.container}>
+      <View className="h-full items-center justify-center gap-40">
         <View className="items-center justify-center space-y-2">
           <Text className="text-2xl font-semibold">
             {"Look Like you're new to"}
@@ -16,8 +17,8 @@ export default function index() {
           <Logo />
         </View>
 
-        <View className="items-center justify-center space-y-4">
-          <Text className="text-xl font-semibold">
+        <View className="items-center justify-center">
+          <Text className="text-xl font-semibold pb-4">
             {"Let's create an account for you"}
           </Text>
           <Button
@@ -37,6 +38,6 @@ export default function index() {
           </Pressable>
         </View>
       </View>
-    </Surface>
+    </SafeAreaView>
   );
 }

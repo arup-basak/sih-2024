@@ -1,13 +1,13 @@
-import { View, Text, Pressable, Touchable } from "react-native";
+import { View, Text, Pressable } from "react-native";
 import React from "react";
 import Logo from "@/components/Logo";
-import { Button, Icon, Surface, TextInput } from "react-native-paper";
+import { Button, Icon, TextInput } from "react-native-paper";
 import styles from "@/styles/style";
-import { useResponsiveWidth } from "react-native-responsive-dimensions";
 import { router } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { StatusBar } from "expo-status-bar";
 
 export default function index() {
-  const width = useResponsiveWidth(84);
 
   const handleSignIn = () => {
     router.navigate("/dashboard");
@@ -15,17 +15,19 @@ export default function index() {
 
   const handleSignInGoogle = () => {};
   return (
-    <Surface style={styles.container}>
-      <View className="items-center pt-24">
-        <Text className="text-2xl">Welcome To</Text>
-        <Logo />
+    <SafeAreaView style={styles.container}>
+      <StatusBar style="dark" />
+      <View className="items-center pt-48">
+        <Text className="text-3xl">Welcome To</Text>
+        <Logo size="large" />
       </View>
-      <View className="bg-green p-8 absolute bottom-0 rounded-t-3xl space-y-4 pb-24">
-        <Text className="text-white text-xl text-center ">
+
+      <View className="bg-green p-8 absolute w-full justify-center bottom-0 rounded-t-3xl gap-6 pb-24">
+        <Text className="text-white text-2xl text-center">
           Sign In or Create an Account
         </Text>
 
-        <View className="space-y-2">
+        <View className="gap-2">
           <Text className="text-white text-center">
             Enter mobile number or email
           </Text>
@@ -48,10 +50,10 @@ export default function index() {
         <Pressable
           onPress={handleSignInGoogle}
           className="bg-white w-fit p-3 flex-row gap-2 items-center justify-center"
-          style={{ borderRadius: 12, width }}
+          style={{ borderRadius: 12, width: 350 }}
         >
           <Icon source={"google"} size={24} color="black" />
-          <Text className="text-xs">Continue with Google</Text>
+          <Text className="text-sm">Continue with Google</Text>
         </Pressable>
 
         <View className="flex-row items-center justify-center gap-2">
@@ -63,6 +65,6 @@ export default function index() {
           </Pressable>
         </View>
       </View>
-    </Surface>
+    </SafeAreaView>
   );
 }

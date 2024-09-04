@@ -3,8 +3,13 @@ import { View, Text, Image } from "react-native";
 import { Button, Surface } from "react-native-paper";
 import { useRouter } from "expo-router";
 import styles from "@/styles/style";
+import Logo from "@/components/Logo";
+import { LinearGradient } from "expo-linear-gradient";
+import { Animated } from "react-native";
 
 export default function Index() {
+  const AnimatedLinearGradient =
+    Animated.createAnimatedComponent(LinearGradient);
   const router = useRouter();
   const handleClick = () => {
     router.navigate("/location");
@@ -12,36 +17,38 @@ export default function Index() {
 
   return (
     <Surface style={styles.container}>
-      <View className="relative bg-[#FFEEBD] ">
-        <Image
-          className="object-fill w-full h-full absolute z-0 "
-          source={require("../assets/images/LandingBackground.png")}
-        />
-        <Image
-          className="object-fill w-full h-full absolute z-10 opacity-60"
-          source={require("../assets/images/gradient.png")}
-        />
-
-        <View className="p-4 absolute w-full bottom-10 z-20">
-          <Text className="text-5xl font-bold text-white border-b-2 border-white pb-4">
-            Harvest
-            <Text className="text-[#4CAF50]">Link</Text>
-          </Text>
-          <Text className="pt-4 text-white">
-            Cultivating Connections, Harvesting Value
-          </Text>
-          <Text
-            onPress={handleClick}
-            className="w-full p-3 py-6 mt-10 bg-[#4CAF50] text-center text-md text-white text-xl font-bold rounded-3xl"
-          >
-            Get Started
-          </Text>
-          <View>
-            <Text>HarvestLink</Text>
-            <Text>Cultivating Connections, Harvesting Value</Text>
-            <Button onPress={handleClick}>Get Started</Button>
-          </View>
+      <View className="relative items-center">
+        <View className="absolute -bottom-[30rem] w-full h-full items-center justify-center">
+          <Image
+            source={require("@/assets/images/LandingBackground.png")}
+            style={{ height: 584, width: 288 }}
+          />
         </View>
+
+        <AnimatedLinearGradient
+          colors={["rgba(255,255,255, 0)", "rgba(0,0,0, 1)"]}
+          style={{
+            position: "absolute",
+            top: 500,
+            left: 0,
+            right: 0,
+            height: 500,
+          }}
+        />
+      </View>
+      <View className="absolute space-y-2 bottom-12 gap-2 items-center justify-center w-full">
+        <Logo color="white" />
+        <Text className="text-white text-sm">
+          Cultivating Connections, Harvesting Value
+        </Text>
+
+        <Button
+          mode="contained"
+          style={{ borderRadius: 12, width: 300, padding: 2 }}
+          onPress={handleClick}
+        >
+          Get Started
+        </Button>
       </View>
     </Surface>
   );

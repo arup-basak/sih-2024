@@ -20,7 +20,14 @@ export default function RootLayout() {
     <PaperProvider theme={theme}>
       <Stack>
         <Stack.Screen name="index" options={{headerShown: false}}/>
-        <Stack.Screen name="location" options={{headerShown: false}}/>
+        <Stack.Screen name="location/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(auth)/login/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(auth)/signup/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(auth)/signup/create/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(bids)/create-bid/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(bids)/list-bids/index" options={{headerShown: false}}/>
+        <Stack.Screen name="(bids)/place-bid/index" options={{headerShown: false}}/>
+        <Stack.Screen name="dashboard/index" options={{headerShown: false}}/>
       </Stack>
     </PaperProvider>
   );
